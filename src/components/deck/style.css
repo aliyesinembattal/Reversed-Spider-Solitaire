@@ -1,0 +1,13 @@
+.deck-completed {
+  margin-right: -28px;
+  border-radius: 10px;
+  transform: scale(0.7, 0.7);
+  width: 165px;
+  height: 260px;
+  border: 2px solid gray;
+  display: inline-block;
+}
+.deck-not-completed {
+  display: inline-block;
+  width: 135px;
+}

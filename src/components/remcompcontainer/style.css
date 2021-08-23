@@ -1,0 +1,19 @@
+.remaining-completed-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.completed-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+}
+.completed-deck {
+  transform: none;
+}
