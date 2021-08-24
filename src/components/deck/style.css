@@ -11,3 +11,6 @@
   display: inline-block;
   width: 135px;
 }
+.completed-deck {
+  transform: none;
+}

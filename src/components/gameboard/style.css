@@ -3,20 +3,13 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.completed-cards {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 95%;
-}
+
 .cards {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
-.completed-deck {
-  transform: none;
-}
+
 .undo-btn {
   background-color: #f56217;
   width: 100px;
@@ -29,6 +22,17 @@
   margin-left: 30px;
 }
 .new-btn {
+  color: #f56217;
+  width: 100px;
+  height: 30px;
+  border: 3px;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #0b486b;
+  font-weight: bold;
+  margin-left: 30px;
+}
+.hint-btn {
   color: #f56217;
   width: 100px;
   height: 30px;

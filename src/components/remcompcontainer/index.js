@@ -3,11 +3,11 @@ import React from 'react';
 import { Card, Deck } from '../index';
 import './style.css';
 
-export const RemainingCompletedContainer = ({ remainingCards, completedDecks, handleDistributeRemainingCards, onDropped }) => {
+export const RemainingCompletedContainer = ({ remainingCards, completedDecks, handleDealRemainingCards, onDropped }) => {
   return (
     <>
       <div className="completed-cards">
-        <span style={{ display: 'block' }}>{remainingCards.length > 0 ? <Card visible={false} onClick={handleDistributeRemainingCards} /> : <Card disabled={true}></Card>}</span>
+        <span style={{ display: 'block' }}>{remainingCards.length > 0 ? <Card visible={false} onClick={handleDealRemainingCards} /> : <Card disabled={true}></Card>}</span>
         <div style={{ pointerEvents: 'none' }}>
           {completedDecks.map((deck, index) => {
             return (

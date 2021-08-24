@@ -13,7 +13,7 @@ export const Card = ({ id, suit, rank, visible, completed, disabled, highlighted
   const spades = {
     symbol: '\u2660',
     name: 'pique',
-    color: 'black',
+    color: '#0b486b',
   };
   const highlight = highlighted ? defaultHighlight : {};
   const rankLabel = ranks[rank] || rank;
@@ -82,7 +82,7 @@ export const Card = ({ id, suit, rank, visible, completed, disabled, highlighted
           cursor: 'move',
         }}
       >
-        <div className="card" style={{ transform: !completed ? scale : 'none', ...highlight, color: isOver ? 'mauve' : isDragging ? 'purple' : spades.color }}>
+        <div className="card" style={{ transform: !completed ? scale : 'none', ...highlight, color: isOver ? 'mauve' : isDragging ? '#f56217' : spades.color }}>
           <Ranks rank={rank} spades={spades} rankLabel={rankLabel} />
         </div>
       </div>

@@ -6,14 +6,8 @@
 .completed-cards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  width: 95%;
-}
-.cards {
-  display: flex;
   justify-content: center;
-}
-.completed-deck {
-  transform: none;
+  width: 100%;
+  gap: 60px;
 }

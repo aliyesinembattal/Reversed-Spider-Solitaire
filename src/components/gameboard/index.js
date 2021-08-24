@@ -9,6 +9,7 @@ export const GameBoard = () => {
   const [game, setRawGame] = useState(setInitialGame());
   const [completed, setCompleted] = useState({ decks: completedDecks, counter: 0 });
   const [gameHistory, setGameHistory] = useState([]);
+  const [highlightedCards, setHightlightedCards] = useState(new Set());
 
   const setGame = (newgame) => {
     gameHistory.push(game);
@@ -37,7 +38,7 @@ export const GameBoard = () => {
     setRawGame(checkWon(checkCombined.game));
   };
 
-  const handleDistributeRemainingCards = () => {
+  const handleDealRemainingCards = () => {
     setGame(dealRemainingCards(game));
   };
 
@@ -68,9 +69,16 @@ export const GameBoard = () => {
     setGameHistory(gameHistory.slice(0, gameHistory.length - 1));
     setRawGame(previousGame);
   };
+
+  const showHint = () => {
+    const moves = allPossibleMoves(game);
+    setHightlightedCards(new Set(moves.map((m) => m.card.id)));
+  };
+  const resetHighlighted = () => setHightlightedCards(new Set());
   return (
     <>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <img src="spider.ico" alt="spider.ico" />
         <div style={{ display: 'flex', height: '50px', alignItems: 'center' }}>
           <a href="/" style={{ marginLeft: 'auto' }}>
             <button className="new-btn">New</button>
@@ -79,10 +87,12 @@ export const GameBoard = () => {
         <button className="undo-btn" onClick={handleUndo} disabled={gameHistory.length === 0}>
           Undo
         </button>
+        <button className="hint-btn" onMouseDown={showHint} onMouseUp={resetHighlighted}>
+          Hint ?
+        </button>
       </div>
-
       <div className="remaining-completed-cards">
-        <RemainingCompletedContainer remainingCards={game.remainingCards} completedDecks={completed.decks} handleDistributeRemainingCards={handleDistributeRemainingCards} onDropped={onDropped} />
+        <RemainingCompletedContainer remainingCards={game.remainingCards} completedDecks={completed.decks} handleDealRemainingCards={handleDealRemainingCards} onDropped={onDropped} />
 
         <div id="cards" className="cards">
           {game.decks.map((deck) => {
@@ -90,7 +100,7 @@ export const GameBoard = () => {
               <Deck key={deck.id} deck={deck} onDropped={onDropped}>
                 {deck.cards
                   .map((card) => {
-                    return <Card key={card.id} {...card} onClick={onClickCard} onDropped={onDropped} />;
+                    return <Card key={card.id} {...card} onClick={onClickCard} onDropped={onDropped} highlighted={highlightedCards.has(card.id)} />;
                   })
                   .concat(deck.cards.length === 0 ? [<Card disabled={true} onDropped={(dropped) => onDropped(dropped, undefined, deck)} />] : [])}
               </Deck>

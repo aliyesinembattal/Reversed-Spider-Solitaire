@@ -17,17 +17,6 @@
   width: 165px;
   z-index: 2;
 }
-.card .back {
-  background-color: red;
-  -webkit-transform: rotateY(180deg);
-}
-.card.flipped {
-  -webkit-transform: rotateY(180deg);
-}
-.card.heart,
-.card.diamond {
-  color: red;
-}
 
 .card .corner {
   line-height: 1;
@@ -51,7 +40,7 @@
 }
 .card .corner.top {
   left: 8px;
-  top: 8px;
+  top: 12px;
 }
 .card .corner.bottom {
   bottom: 12px;
@@ -71,7 +60,7 @@
   width: 50px;
 }
 .card .top_center {
-  left: 60px;
+  left: 58px;
   top: 24px;
 }
 .card .top_left {
@@ -84,7 +73,7 @@
 }
 
 .card .middle_center {
-  left: 60px;
+  left: 58px;
   top: 100px;
 }
 .card .middle_top {
@@ -106,7 +95,7 @@
   top: 100px;
 }
 .card .middle_top_center {
-  left: 60px;
+  left: 58px;
   top: 50px;
 }
 .card .middle_top_left {
@@ -131,14 +120,14 @@
 }
 .card .middle_bottom_center {
   bottom: 50px;
-  left: 60px;
+  left: 58px;
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
 }
 
 .card .bottom_center {
   bottom: 24px;
-  left: 60px;
+  left: 58px;
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
 }
@@ -158,4 +147,8 @@
 .corner.bottom.spades {
   font-size: 500%;
   filter: grayscale(100%);
+}
+.cards {
+  display: flex;
+  justify-content: center;
 }
