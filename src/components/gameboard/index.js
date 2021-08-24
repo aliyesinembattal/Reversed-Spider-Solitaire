@@ -80,7 +80,7 @@ export const GameBoard = () => {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <img src="spider.ico" alt="spider.ico" />
         <div style={{ display: 'flex', height: '50px', alignItems: 'center' }}>
-          <a href="/" style={{ marginLeft: 'auto' }}>
+          <a href="/one-suite-reversed-spider-solitaire" style={{ marginLeft: 'auto' }}>
             <button className="new-btn">New</button>
           </a>
         </div>
