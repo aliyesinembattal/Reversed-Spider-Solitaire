@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+## Live Demo: https://aliyesinembattal.github.io/one-suite-reversed-spider-solitaire/
+#This project deployed on Github.
+
+## Lighthouse Test Picture: ![Lighthouse](https://user-images.githubusercontent.com/77485189/130544695-052ae0cd-6cb7-4ae6-b98c-6542785bf6b2.png)
+
+## I developed this game with React.js. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
